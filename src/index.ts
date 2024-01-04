@@ -8,12 +8,12 @@ interface EliquidComposition {
 export function calculateEliquidComposition(
     finalQuantityMl: number,
     finalNicotineMgMl: number,
-    vgPgRatio: string,
+    vgPercentage: number,
+    pgPercentage: number,
     nicotineBasesMgMl: number,
     aromaPercentage: number
 ): EliquidComposition {
-    const [vgPercentage, pgPercentage] = vgPgRatio.split('/').map(Number);
-
+    
     const vgMl = finalQuantityMl * (vgPercentage / 100);
     const pgMl = finalQuantityMl * (pgPercentage / 100);
 

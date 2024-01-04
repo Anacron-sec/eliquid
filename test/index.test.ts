@@ -1,17 +1,19 @@
 import { calculateEliquidComposition } from '../src/index';
 
 describe('calculateEliquidComposition', () => {
-    it('should correctly calculate eliquid composition', () => {
-        const finalQuantityMl = 100;
-        const finalNicotineMgMl = 4;
-        const vgPgRatio = '50/50';
-        const nicotineBasesMgMl = 20;
-        const aromaPercentage = 10;
+    const finalQuantityMl = 100;
+    const finalNicotineMgMl = 4;
+    const vgPercentage = 50;
+    const pgPercentage = 50;
+    const nicotineBasesMgMl = 20;
+    const aromaPercentage = 10;
 
+    it('should correctly calculate eliquid composition', () => {
         const result = calculateEliquidComposition(
             finalQuantityMl,
             finalNicotineMgMl,
-            vgPgRatio,
+            vgPercentage,
+            pgPercentage,
             nicotineBasesMgMl,
             aromaPercentage
         );
@@ -25,23 +27,17 @@ describe('calculateEliquidComposition', () => {
     });
 
     it('should ensure the sum of vgMl, pgMl, aromaMl, and nicotineMl equals finalQuantityMl', () => {
-        const finalQuantityMl = 100;
-        const finalNicotineMgMl = 4;
-        const vgPgRatio = '50/50';
-        const nicotineBasesMgMl = 20;
-        const aromaPercentage = 10;
-    
         const result = calculateEliquidComposition(
             finalQuantityMl,
             finalNicotineMgMl,
-            vgPgRatio,
+            vgPercentage,
+            pgPercentage,
             nicotineBasesMgMl,
             aromaPercentage
         );
-    
+
         const sum = result.vgMl + result.pgMl + result.aromaMl + result.nicotineMl;
-    
+
         expect(sum).toEqual(finalQuantityMl);
     });
 });
-
