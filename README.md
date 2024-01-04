@@ -5,7 +5,7 @@ This project provides utility functions related to eliquids, specifically to hel
 ## Installation (not yet published)
 
 ```bash
-npm install <to-be-defined>
+npm install eliquid
 ```
 
 ## Usage
