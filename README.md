@@ -2,7 +2,7 @@
 
 This project provides utility functions related to eliquids, specifically to help in create the correct liquid composition
 
-## Installation (not yet published)
+## Installation
 
 ```bash
 npm install eliquid
