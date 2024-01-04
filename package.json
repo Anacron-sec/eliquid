@@ -1,0 +1,36 @@
+{
+  "name": "eliquid",
+  "version": "0.0.1",
+  "description": "JS/TS library to calculate eliquids (vaping juices) composition",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anacron-sec/eliquid.git"
+  },
+  "keywords": [
+    "vape",
+    "eliquid",
+    "juice",
+    "ejuice",
+    "nicotine"
+  ],
+  "author": "Michele Biondi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Anacron-sec/eliquid/issues"
+  },
+  "homepage": "https://github.com/Anacron-sec/eliquid#readme",
+  "devDependencies": {
+    "@types/jest": "^29.5.11",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.3.3"
+  }
+}
