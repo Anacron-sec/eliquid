@@ -1,6 +1,6 @@
 
 import { calculateEliquidComposition, convertVgPgToString, parseVgPgString } from '../src/index';
-import { InvalidPercentageError, InvalidVgPgStringError } from '../src/errors';
+import { InvalidPercentageError } from '../src/errors';
 
 describe('calculateEliquidComposition', () => {
     const finalQuantityMl = 100;
