@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "test": "jest",
+    "coverage": "jest --coverage",
     "build": "rm -rf dist && tsc"
   },
   "repository": {

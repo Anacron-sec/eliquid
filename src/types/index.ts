@@ -13,3 +13,8 @@ export interface EliquidParameters {
     nicotineBasesMgMl: number;
     aromaPercentage: number;
 }
+
+export interface VgPg {
+    vg: number;
+    pg: number;
+}

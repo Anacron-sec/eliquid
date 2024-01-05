@@ -1,5 +1,5 @@
-import type { EliquidComposition } from './types/index';
-import type { EliquidParameters } from './types/index';
+import { InvalidPercentageError, InvalidVgPgStringError } from './errors';
+import type { EliquidComposition, EliquidParameters, VgPg } from './types/index';
 
 export function calculateEliquidComposition(params: EliquidParameters): EliquidComposition {
     const {
@@ -12,7 +12,7 @@ export function calculateEliquidComposition(params: EliquidParameters): EliquidC
     } = params;
 
     if (vgPercentage + pgPercentage !== 100) {
-        throw new Error('vgPercentage and pgPercentage must sum up to 100.');
+        throw new InvalidPercentageError('vgPercentage and pgPercentage must sum up to 100.');
     }
 
     const vgMl = finalQuantityMl * (vgPercentage / 100);
@@ -27,4 +27,18 @@ export function calculateEliquidComposition(params: EliquidParameters): EliquidC
         aromaMl,
         nicotineMl,
     };
+}
+
+export function parseVgPgString(vgPgString: string): VgPg {
+    const [vg, pg] = vgPgString.split('/').map((v) => parseInt(v, 10));
+
+    if (vg + pg !== 100) {
+        throw new InvalidVgPgStringError('vgPgString must be in the format "VG/PG" and sum up to 100.');
+    }
+
+    return {vg, pg};
+}
+
+export function convertVgPgToString(vgPg: VgPg): string {
+    return `${vgPg.vg}/${vgPg.pg}`;
 }
