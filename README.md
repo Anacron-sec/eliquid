@@ -43,4 +43,21 @@ This will output:
 }
 ```
 
+There are also simple utility functions for vg/pg string to object (and vice-versa conversion):
+```js
+const { parseVgPgString, convertVgPgToString} = require('eliquid');
+
+const vgPgString = '50/50';
+const vgPgStringToObject = parseVgPgString(vgPgString);
+console.log(result);
+
+// This will output {vg: 50, pg: 50}
+
+const vgPg = { vg: 50, pg: 50 };
+const vgPgStringed = convertVgPgToString(vgPg);
+console.log(result);
+
+// This will output "50/50"
+
+```
 
