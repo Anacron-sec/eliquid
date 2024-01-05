@@ -49,13 +49,13 @@ const { parseVgPgString, convertVgPgToString} = require('eliquid');
 
 const vgPgString = '50/50';
 const vgPgStringToObject = parseVgPgString(vgPgString);
-console.log(result);
+console.log(vgPgStringToObject);
 
 // This will output {vg: 50, pg: 50}
 
 const vgPg = { vg: 50, pg: 50 };
 const vgPgStringed = convertVgPgToString(vgPg);
-console.log(result);
+console.log(vgPgStringed);
 
 // This will output "50/50"
 
