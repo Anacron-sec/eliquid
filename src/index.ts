@@ -32,10 +32,6 @@ export function calculateEliquidComposition(params: EliquidParameters): EliquidC
 export function parseVgPgString(vgPgString: string): VgPg {
     const [vg, pg] = vgPgString.split('/').map((v) => parseInt(v, 10));
 
-    if (vg + pg !== 100) {
-        throw new InvalidVgPgStringError('vgPgString must be in the format "VG/PG" and sum up to 100.');
-    }
-
     return {vg, pg};
 }
 

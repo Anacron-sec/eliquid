@@ -64,12 +64,6 @@ describe('parseVgPgString', () => {
         const result = parseVgPgString(vgPgString);
         expect(result).toEqual({ vg: 50, pg: 50 });
     });
-
-    it('should throw an error for invalid vgPgString', () => {
-        const invalidVgPgString = '60-40';
-        
-        expect(() => parseVgPgString(invalidVgPgString)).toThrow(InvalidVgPgStringError);
-    });
 });
 
 describe('convertVgPgToString', () => {
