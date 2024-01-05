@@ -1,5 +1,5 @@
 import { InvalidPercentageError, InvalidVgPgStringError } from './errors';
-import type { EliquidComposition, EliquidParameters, VgPg } from './types/index';
+import type { EliquidComposition, EliquidParameters, VgPg } from './types';
 
 export function calculateEliquidComposition(params: EliquidParameters): EliquidComposition {
     const {
