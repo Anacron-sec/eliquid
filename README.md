@@ -12,6 +12,7 @@ npm install eliquid
 First, import the calculateEliquidComposition function and the necessary interfaces:
 ```js
 const { calculateEliquidComposition } = require('eliquid');
+// or ES6
 import { calculateEliquidComposition } from 'eliquid';
 ```
 
