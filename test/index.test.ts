@@ -1,6 +1,6 @@
 
 import { calculateEliquidComposition, convertVgPgToString, parseVgPgString } from '../src/index';
-import { InvalidPercentageError } from '../src/errors';
+import { InvalidPercentageError, InvalidPgVgStringError } from '../src/errors';
 
 describe('calculateEliquidComposition', () => {
     const finalQuantityMl = 100;
@@ -71,5 +71,10 @@ describe('convertVgPgToString', () => {
         const vgPg = { vg: 50, pg: 50 };
         const result = convertVgPgToString(vgPg);
         expect(result).toEqual('50/50');
+    });
+
+    it('should throw an error for invalid vgPgString format', () => {
+        const invalidVgPgString = '50-50';
+        expect(() => parseVgPgString(invalidVgPgString)).toThrow(InvalidPgVgStringError);
     });
 });

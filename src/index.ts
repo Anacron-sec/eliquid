@@ -1,4 +1,4 @@
-import { InvalidPercentageError } from './errors';
+import { InvalidPercentageError, InvalidPgVgStringError } from './errors';
 import type { EliquidComposition, EliquidParameters, VgPg } from './types';
 
 export function calculateEliquidComposition(params: EliquidParameters): EliquidComposition {
@@ -32,7 +32,11 @@ export function calculateEliquidComposition(params: EliquidParameters): EliquidC
 export function parseVgPgString(vgPgString: string): VgPg {
     const [vg, pg] = vgPgString.split('/').map((v) => parseInt(v, 10));
 
-    return {vg, pg};
+    if (typeof vg === 'undefined' || typeof pg === 'undefined') {
+        throw new InvalidPgVgStringError('Invalid vgPgString format.');
+    }
+
+    return { vg, pg };
 }
 
 export function convertVgPgToString(vgPg: VgPg): string {
