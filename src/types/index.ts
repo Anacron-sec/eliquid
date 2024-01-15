@@ -1,7 +1,7 @@
 export interface EliquidComposition {
     vgMl: number;
     pgMl: number;
-    aromaMl: number;
+    flavorMl: number;
     nicotineMl: number;
 }
 
@@ -11,7 +11,7 @@ export interface EliquidParameters {
     vgPercentage: number;
     pgPercentage: number;
     nicotineBasesMgMl: number;
-    aromaPercentage: number;
+    flavorPercentage: number;
 }
 
 export interface VgPg {

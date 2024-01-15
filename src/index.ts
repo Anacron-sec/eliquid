@@ -8,7 +8,7 @@ export function calculateEliquidComposition(params: EliquidParameters): EliquidC
         vgPercentage,
         pgPercentage,
         nicotineBasesMgMl,
-        aromaPercentage
+        flavorPercentage
     } = params;
 
     if (vgPercentage + pgPercentage !== 100) {
@@ -18,13 +18,13 @@ export function calculateEliquidComposition(params: EliquidParameters): EliquidC
     const vgMl = finalQuantityMl * (vgPercentage / 100);
     const pgMl = finalQuantityMl * (pgPercentage / 100);
 
-    const aromaMl = finalQuantityMl * (aromaPercentage / 100);
+    const flavorMl = finalQuantityMl * (flavorPercentage / 100);
     const nicotineMl = (finalNicotineMgMl * finalQuantityMl) / nicotineBasesMgMl;
 
     return {
         vgMl: vgMl - nicotineMl * (vgPercentage / 100),
-        pgMl: pgMl - aromaMl - nicotineMl * (pgPercentage / 100),
-        aromaMl,
+        pgMl: pgMl - flavorMl - nicotineMl * (pgPercentage / 100),
+        flavorMl,
         nicotineMl,
     };
 }

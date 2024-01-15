@@ -25,7 +25,7 @@ const parameters = {
     vgPercentage: 50,
     pgPercentage: 50,
     nicotineBasesMgMl: 20,
-    aromaPercentage: 10,
+    flavorPercentage: 10,
 };
 
 const composition = calculateEliquidComposition(parameters);
@@ -38,7 +38,7 @@ This will output:
 {
     vgMl: 40,
     pgMl: 30,
-    aromaMl: 10,
+    flavorMl: 10,
     nicotineMl: 20,
 }
 ```
